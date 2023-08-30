@@ -15,20 +15,20 @@ type NsLookupResponse struct {
 }
 
 func nsLookup(url string) NsLookupResponse {
-  ips, err := net.LookupIP(url)
+	ips, err := net.LookupIP(url)
 
-  if err != nil {
+	if err != nil {
 		response := NsLookupResponse {
 			Status: Error,
 			IPs: nil,
 		}
 		return response
-  }
+	}
 
 	var out []string
-  for _, ip := range ips {
-    out = append(out, ip.String())
-  }
+	for _, ip := range ips {
+		out = append(out, ip.String())
+	}
 
 	response := NsLookupResponse {
 		Status: Ok,
