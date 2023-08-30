@@ -11,8 +11,16 @@ func main() {
 
   // routes
   app.Get("/", getIP)
+  app.Get("/ip", getIP)
+  app.Get("/ns", getIpForDomain)
 
   app.Listen(":3000")
+}
+
+func getIpForDomain(c *fiber.Ctx) error {
+  domain := c.Query("n")
+  result := nsLookup(domain)
+  return c.JSON(result)
 }
 
 func getIP(c *fiber.Ctx) error {
