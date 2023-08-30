@@ -6,7 +6,6 @@ require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/gofiber/fiber/v2 v2.49.0 // indirect
 	github.com/google/uuid v1.3.1 // indirect
-	github.com/holys/nslookup v0.0.0-20150505080750-1287fa06045f // indirect
 	github.com/klauspost/compress v1.16.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
