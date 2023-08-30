@@ -14,7 +14,7 @@ type NsLookupResponse struct {
 	IPs []string
 }
 
-func nsLookup(url string) NsLookupResponse {
+func NsLookup(url string) NsLookupResponse {
 	ips, err := net.LookupIP(url)
 
 	if err != nil {

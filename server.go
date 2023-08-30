@@ -10,20 +10,20 @@ func main() {
 	app := fiber.New()
 
 	// routes
-	app.Get("/", getIP)
-	app.Get("/ip", getIP)
-	app.Get("/ns", getIpForDomain)
+	app.Get("/", GetIP)
+	app.Get("/ip", GetIP)
+	app.Get("/ns", GetIpForDomain)
 
 	app.Listen(":3000")
 }
 
-func getIpForDomain(c *fiber.Ctx) error {
+func GetIpForDomain(c *fiber.Ctx) error {
 	domain := c.Query("n")
-	result := nsLookup(domain)
+	result := NsLookup(domain)
 	return c.JSON(result)
 }
 
-func getIP(c *fiber.Ctx) error {
+func GetIP(c *fiber.Ctx) error {
 	ip := c.IP()
 
 	/* if we get a reserved ip we want to see if there
