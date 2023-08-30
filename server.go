@@ -24,7 +24,9 @@ func getIP(c *fiber.Ctx) error {
   if re.MatchString(ip) {
   	ips := c.IPs()
   	if (len(ips) > 0) {
-      ip = ips[0] 
+      for _, i := range ips {
+        ip = ip + "\n" + i
+      }
   	}
   }
 
