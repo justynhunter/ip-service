@@ -19,7 +19,7 @@ func getIP(c *fiber.Ctx) error {
   ip := c.IP()
 
   /* if we get a reserved ip we want to see if there
-   * are ips in the headers, if so us`e the first one */
+   * are ips in the headers, if so use the first one */
   re := regexp.MustCompile(`(^127\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^192\.168\.)`)
   if re.MatchString(ip) {
   	ips := c.IPs()
@@ -30,5 +30,5 @@ func getIP(c *fiber.Ctx) error {
   	}
   }
 
-  return c.SendString(ip)
+  return c.SendString(ip + "\n")
 }
