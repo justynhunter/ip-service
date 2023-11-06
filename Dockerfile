@@ -13,8 +13,8 @@ FROM base as runner
 ARG PORT
 
 WORKDIR /usr/app
-COPY --from=builder /usr/build/ip-service ./
+COPY --from=builder /usr/build/ip-service .
 
 EXPOSE ${PORT}
 
-CMD ["ip-service"]
+CMD ["./ip-service"]
