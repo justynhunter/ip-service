@@ -2,15 +2,8 @@ package main
 
 import "net"
 
-type NsLookupStatus string
-
-const (
-	Ok NsLookupStatus = "OK"
-	Error NsLookupStatus = "ERROR"
-)
-
 type NsLookupResponse struct {
-	Status NsLookupStatus
+	Status ResponseStatus
 	IPs []string
 }
 

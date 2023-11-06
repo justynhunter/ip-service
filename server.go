@@ -12,7 +12,8 @@ func main() {
 	app.Get("/ip", GetIP)
 	app.Get("/ns", GetIpForDomain)
 
-	app.Listen(":3000")
+	err := app.Listen(":3000")
+	println(err.Error())
 }
 
 func GetIpForDomain(c *fiber.Ctx) error {
